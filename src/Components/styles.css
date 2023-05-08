@@ -1,0 +1,103 @@
+.sidebar-container {
+  width: 20vw;
+  height: 100%;
+  position: fixed;
+  color: white;
+}
+.contacts-container {
+  width: 100%;
+  height: 100%;
+  padding: 15px 15px;
+}
+.active {
+  background-color: white;
+  color: rgb(1, 49, 122);
+  font-weight: 800;
+  padding: 10px;
+  border-radius: 8px;
+}
+.item {
+  margin-bottom: 50px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+}
+.contacts-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.each-contact {
+  width: 188px;
+  border-radius: 8px;
+  height: 156px;
+  background-color: rgb(153, 8, 88);
+  box-shadow: 1px 1px 1px 1px rgb(106, 102, 102);
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.name {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+  width: 70%;
+  text-align: center;
+}
+.status {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.active {
+  color: green;
+  font-family: cursive;
+}
+.inactive {
+  color: red;
+  font-family: monospace;
+}
+.create-contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 70vw;
+  width: 100%;
+  min-height: 80vh;
+  height: 100%;
+}
+.form-container {
+  width: 350px;
+  height: fit-content;
+  padding: 25px 15px;
+  color: white;
+  border-radius: 10px;
+}
+.primary-input-field {
+  height: 45px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color: rgb(2, 2, 55) !important;
+  font-weight: 600;
+}
+.label {
+  font-weight: 800;
+}
+.chartsContainer {
+  width: 100% !important;
+  height: 350px;
+}
+.edit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 75vw;
+}
