@@ -73,7 +73,7 @@ export default function contacts(state = initialState, action) {
             }
           });
           localStorage.setItem("contacts", JSON.stringify(updatedContacts));
-          alert("Contact has been Updated");
+          console.log("Contact has been Updated");
           return {
             ...state,
             contacts: state.contacts.map((el) => {

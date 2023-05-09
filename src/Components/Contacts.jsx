@@ -2,10 +2,16 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeContact } from "../Redux/Actions/contacts";
+import EditContact from "./EditContact";
 
 function Contacts() {
   const dispatch = useDispatch();
   const allContacts = useSelector((state) => state.contacts.contacts);
+
+  const [showEditContact, setShowEditContact] = React.useState({
+    id: "",
+    bool: false,
+  });
 
   // console.log(allContacts);
   return (
@@ -33,17 +39,23 @@ function Contacts() {
                   {contact.status}
                 </h5>
               </div>
-              <Link
-                to={`/edit/${contact.id}`}
-                style={{ color: "inherit", textDecoration: "none" }}
+              <button
+                onClick={() =>
+                  setShowEditContact({ id: contact.id, bool: true })
+                }
+                className="bg-pink-900 font-bold text-xl px-5 rounded text-white py-2 mb-2 editBtn"
               >
-                <button className="bg-pink-900 font-bold text-xl px-5 rounded text-white py-2 mb-2">
-                  Edit
-                </button>
-              </Link>
+                Edit
+              </button>
+              {showEditContact.bool && (
+                <EditContact
+                  setShowEditContact={setShowEditContact}
+                  showEditContact={showEditContact}
+                />
+              )}
               <button
                 onClick={() => dispatch(removeContact(contact.id))}
-                className="bg-red-500 font-bold text-xl px-5 rounded text-white py-2"
+                className="bg-red-500 font-bold text-xl px-5 rounded text-white py-2 deleteBtn"
               >
                 Delete
               </button>

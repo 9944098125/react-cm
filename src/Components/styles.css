@@ -21,6 +21,9 @@
   width: 100%;
   cursor: pointer;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 .contacts-list {
   display: flex;
@@ -91,13 +94,80 @@
   font-weight: 800;
 }
 .chartsContainer {
-  width: 100% !important;
+  width: 800px !important;
   height: 350px;
 }
 .edit-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   width: 75vw;
+}
+div.modal-content {
+  position: absolute !important;
+  top: 25% !important;
+  left: 45% !important;
+}
+.editBtn,
+.deleteBtn {
+  width: 220px !important;
+}
+.box {
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 12px 28px 0 var(--shadow-1), 0 2px 4px 0 var(--shadow-2),
+    inset 0 0 0 1px var(--shadow-inset);
+  min-height: 228px;
+  width: 300px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(202, 200, 200, 0.768);
+  bottom: 0;
+  z-index: 999;
+}
+@media screen and (max-width: 1000px) {
+  .nav-container {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 945px) {
+  .chartsContainer {
+    width: 500px !important;
+  }
+  .item .text {
+    display: none;
+  }
+  .item .icons {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 608px) {
+  .chartsContainer {
+    width: 400px !important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .chartsContainer {
+    width: 270px !important;
+  }
+  .form-container {
+    width: 300px;
+  }
+  .create-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .chartsContainer {
+    width: 250px !important;
+  }
+}
+.mapContainer {
+  width: 800px !important;
 }

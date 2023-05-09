@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FcContacts } from "react-icons/fc";
+import { SiSoundcharts } from "react-icons/si";
 
 function Sidebar() {
   const location = useLocation();
@@ -14,7 +16,8 @@ function Sidebar() {
                 location.pathname === "/" ? "active item" : "item"
               }`}
             >
-              Contacts
+              <FcContacts className="icons" />
+              <p className="text">Contacts</p>
             </li>
           </Link>
           <Link to="/cm" style={{ color: "inherit", textDecoration: "none" }}>
@@ -23,7 +26,8 @@ function Sidebar() {
                 location.pathname === "/cm" ? "active item" : "item"
               }`}
             >
-              Charts & Maps
+              <SiSoundcharts className="icons" />
+              <p className="text">Charts & Maps</p>
             </li>
           </Link>
         </ul>
