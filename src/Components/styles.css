@@ -131,6 +131,9 @@ div.modal-content {
   bottom: 0;
   z-index: 999;
 }
+.side-heads {
+  padding: 10px 5px;
+}
 @media screen and (max-width: 1000px) {
   .nav-container {
     width: 100% !important;
@@ -145,6 +148,9 @@ div.modal-content {
   }
   .item .icons {
     font-size: 25px;
+  }
+  .sidebar-container {
+    width: 10vw;
   }
 }
 @media screen and (max-width: 608px) {
@@ -161,6 +167,22 @@ div.modal-content {
   }
   .create-container {
     width: 100%;
+  }
+  .sidebar-container {
+    width: 15vw;
+    padding: 0 0;
+  }
+  .side-heads {
+    padding: 0 0;
+  }
+  .active {
+    padding: 0;
+  }
+  .icons {
+    font-size: 20px !important;
+  }
+  .item {
+    padding: 0 0;
   }
 }
 @media screen and (max-width: 375px) {

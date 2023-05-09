@@ -7,6 +7,7 @@ import CreateContact from "../Components/CreateContact";
 import EditContact from "../Components/EditContact";
 
 const Layout = () => {
+  // defining the layout of the application
   return (
     <>
       <div className="fixed-navbar">
@@ -27,6 +28,7 @@ const routes = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
+      // creating routes
       {
         path: "/",
         element: <Contacts />,
@@ -44,6 +46,7 @@ const routes = createBrowserRouter([
 ]);
 
 const BaseRoutes = () => {
+  // providing the routes defined to RouterProvider
   return <RouterProvider router={routes} />;
 };
 

@@ -9,14 +9,19 @@ import { useNavigate } from "react-router-dom";
 function CreateContact() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // declaring initialValues
   const initialValues = {
     firstName: "",
     lastName: "",
     status: "active",
   };
 
+  // we don't require validation
   const validate = (values) => {};
 
+  // taking the info as an object and dispatching
+  // that in the action and after 1 second it navigates to home page
   const submitContact = (values) => {
     const data = {
       firstName: values.firstName,
@@ -32,6 +37,7 @@ function CreateContact() {
   return (
     <React.Fragment>
       <div className="create-contact-container">
+        {/* using tailwind css for styling forms, container and all */}
         <h2 className="text-pink-900 font-bold text-3xl">Create Contact</h2>
         <div className="form-container bg-pink-900">
           <Formik
@@ -39,8 +45,11 @@ function CreateContact() {
             validate={(values) => validate(values)}
             onSubmit={(values) => submitContact(values)}
           >
+            {/* taking errors and touched for validation */}
             {({ errors, touched }) => (
               <Form>
+                {/* since we are using formik,
+                we don't need the onChange method again */}
                 <div className="flex flex-col mb-5">
                   <label htmlFor="firstName" className="label">
                     First Name

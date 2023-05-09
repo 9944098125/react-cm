@@ -1,12 +1,13 @@
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import "leaflet/dist/leaflet.css";
 
 import "./styles.css";
 
 const WorldMap = ({ countriesData }) => {
   const customMarker = L.icon({
-    iconUrl: <FaMapMarkerAlt />,
+    iconUrl:
+      "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png",
     iconSize: [20, 25],
     iconAnchor: [15, 30],
   });

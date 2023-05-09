@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 .scrollable-content {
-  height: 85vh;
+  height: 80vh;
+  width: 100%;
   overflow-y: scroll;
   display: flex;
 }

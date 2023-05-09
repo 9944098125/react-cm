@@ -1,16 +1,17 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Modal } from "react-bootstrap";
 
 import { editContact } from "../Redux/Actions/contacts";
 import "./styles.css";
 
 function EditContact(props) {
+  // taking id from props we provided for this component
   const id = props.showEditContact.id;
-  console.log(useParams());
+  // console.log(useParams());
   const dispatch = useDispatch();
   //   console.log(id);
+  // initially taking these as empty values and rendering them in useEffect
   const [initialValues, setInitialValues] = React.useState({
     id: id,
     firstName: "",
@@ -18,6 +19,7 @@ function EditContact(props) {
     status: "",
   });
 
+  // rendering all contacts from reducer to filter the contacts with id
   const allContacts = useSelector((state) => state.contacts.contacts);
   // console.log(allContacts);
 
@@ -29,11 +31,15 @@ function EditContact(props) {
   };
 
   const submitContact = () => {
+    // dispatching edit contact action and setting setShowEditContact
+    //  to false so that the popup will be closed on submit
     dispatch(editContact(initialValues));
     props.setShowEditContact(false);
   };
 
   React.useEffect(() => {
+    // filtering all the contacts with id and if that
+    // filtered id and this id from component are same then set the initialValues with filtered and matched contact
     allContacts.filter(
       (each) => Number(id) === Number(each.id) && setInitialValues(each)
     );
